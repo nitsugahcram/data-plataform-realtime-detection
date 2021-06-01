@@ -19,8 +19,9 @@ matplotlib = "*"
 notebook = "*"
 pandas = "*"
 plotly = "==4.14.3"
+scikit-learn = "==0.24"
 # seaborn = "*"
 # vaex = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
