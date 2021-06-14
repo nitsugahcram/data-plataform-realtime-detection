@@ -47,3 +47,22 @@ services:
       - ADMIN_USER=${ADMIN_USER:-admin}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
     restart: unless-stopped
+
+  web:
+    image: nitsuga/lp-service
+    container_name: service
+    expose:
+        - 8000
+    ports:
+        - "8000:8000"
+
+  jupyter:
+    image: nitsuga/lp-jupyter
+    container_name: jupyter
+    build:
+      context: ../jupyter/
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    volumes:
+      - ../datasets:/src
